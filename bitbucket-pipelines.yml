@@ -1,4 +1,4 @@
-image: node:latest
+image: cypress/browsers:node18.12.0-chrome106-ff106
 
 pipelines:
   default:
@@ -8,5 +8,5 @@ pipelines:
           - npm ci
           # start the server in the background
           - npm run start &
-          # run Cypress tests
-          - npm run e2e
+          # run Cypress tests in Firefox
+          - npx cypress run --browser firefox
